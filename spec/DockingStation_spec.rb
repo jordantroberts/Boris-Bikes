@@ -14,6 +14,6 @@ describe DockingStation do
   it 'returns docked bikes' do
     bike = Bike.new
     subject.dock(bike)
-    expect(subject.bike).to eq bike #again we nee to return the bike we just docked
+    expect(subject.bike).to eq bike #again we need to return the bike we just docked
   end
 end
