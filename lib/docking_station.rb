@@ -10,8 +10,8 @@ class DockingStation
   # The attribute reader allows us to READ the @bike attribute we set.
   # Using attr_reader, we can now remove the #bike method we defined.
 
-
   def release_bike
+    raise "No bikes available" unless @bike
     Bike.new
   end
 
@@ -30,5 +30,4 @@ class DockingStation
   #  @bike
   #end
   #(removed because of attr_reader)
-
 end

@@ -16,4 +16,8 @@ describe DockingStation do
     subject.dock(bike)
     expect(subject.bike).to eq bike #again we need to return the bike we just docked
   end
+
+  it 'stops from taking bike if none available' do
+    expect { subject.release_bike }.to raise_error("No bikes available")
+  end
 end
