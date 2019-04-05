@@ -20,4 +20,10 @@ describe DockingStation do
   it 'stops from taking bike if none available' do
     expect { subject.release_bike }.to raise_error("No bikes available")
   end
+
+  it 'does not allow user to dock if a bike is already there' do
+    bike = Bike.new
+    subject.dock(bike)
+    expect { subject.dock(bike)}.to raise_error("Docking Station full")
+  end
 end
